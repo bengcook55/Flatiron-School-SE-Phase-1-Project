@@ -7,7 +7,8 @@ This single page application was created as a part of my Flatiron School phase 1
 - Entire app must run on a single page. No redirects or reloads
 - Use of at least 3 distinct event listeners of different types that enable interactivity
 - At least one instance of array iteration 
-- Aimed for good coding practices and utilizing DRY code
+- Aimed at good coding practices and utilizing DRY code 
+- Blog about a technical aspect regarding phase 1: https://medium.com/@bengcook55/breaking-it-down-beginners-guide-to-apis-cb9afd60c153
 
 # Snapshot 
 ![image](https://user-images.githubusercontent.com/113315446/213072383-c42d4244-89c0-420e-93af-5387e922ec46.png)
@@ -17,3 +18,4 @@ This single page application was created as a part of my Flatiron School phase 1
 - state slection widget tool: https://www.freeformatter.com/usa-state-list-html-select.html
 - Styling for turning numneric values into currency values ($): https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-strings
 - Div card container, header and footer inspiration: https://getbootstrap.com/docs/4.0/components/card/
+- 
