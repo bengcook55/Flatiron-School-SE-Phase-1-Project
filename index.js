@@ -64,13 +64,13 @@ function createCard(location, income, age, property){
 
 
 
-// Fetch requests via async await using data USA API
+// Fetch requests via async await using data USA api
 async function getData(loc, callback){
     const location = loc.stateStr;
     let incomeData, ageData, propertyData;
     try {
         incomeData = await fetch(`https://datausa.io/api/data?measure=Household%20Income%20by%20Race,Household%20Income%20by%20Race%20Moe&Geography=${location}:similar&year=latest`)
-            .then(res => res.json())
+            .then(response => response.json())
             .then(d => updateIncome(d))
 
         ageData = await fetch(`https://datausa.io/api/data?measure=Median%20Age&Geography=${location}:parents&year=latest`)
@@ -78,7 +78,7 @@ async function getData(loc, callback){
             .then(d => updateAge(d))
 
         propertyData = await fetch(`https://datausa.io/api/data?measure=Property%20Value&Geography=${location}:parents&year=latest`)
-            .then(res => res.json())
+            .then(response => response.json())
             .then(d => updateProperty(d))
 
     } catch(error){
