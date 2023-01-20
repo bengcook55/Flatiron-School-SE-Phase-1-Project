@@ -19,3 +19,4 @@ This single page application was created as a part of my Flatiron School phase 1
 - Styling for turning numneric values into currency values ($): https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-strings
 - Div card container, header and footer inspiration: https://getbootstrap.com/docs/4.0/components/card/
 - Background gradient and css stlyistic syntax help: https://blog.idrisolubisi.com/how-to-create-beautiful-gradients-with-javascript
+- Inspiration to wrtie about APIs: https://www.freecodecamp.org/news/how-apis-work/ 
