@@ -7,15 +7,15 @@ const card = document.querySelector('#card')
 
 
 
-//add new comparison card to card container div
+// Add new city card container to display
 function createCard(location, income, age, property){
     
-    //Create card that renders after form submission
+    //Create card that displays on form submission
     const newCard = document.createElement('div')
     newCard.id = 'card'
     container.append(newCard)
     
-    //Create close button
+    //Create close button exit sign w/ image
     const closeButton = document.createElement('div')
     closeButton.className = 'close-btn'
     newCard.append(closeButton)
@@ -25,10 +25,10 @@ function createCard(location, income, age, property){
     closeIcon.src = "https://cdn11.bigcommerce.com/s-69o9yl6pah/images/stencil/1280x1280/products/639/1026/Exit_sign__80869.1588876729.png?c=2"
     closeButton.append(closeIcon)
 
-    //Deletes a card when close icon is clicked
+    //Delete card when exit image is clicked
     closeButton.addEventListener('click', (e) => console.log(e.target.parentElement.parentElement.remove()))
 
-    //Create Card Header (location Info)
+    //Render card header with location Info
     const cardHeader = document.createElement('div')
     cardHeader.className = 'card-header'
     
@@ -45,7 +45,7 @@ function createCard(location, income, age, property){
         newCard.append(cardHeader)
 
 
-    //Create data div that populates with fetched info from API
+    //Create div that populates new data with info fetched from API
     const dataDiv = document.createElement('div')
     const incomeP = document.createElement('p')
     const ageP = document.createElement('p')
