@@ -45,7 +45,7 @@ function createCard(location, income, age, property){
         newCard.append(cardHeader)
 
 
-    //Create div that populates new data with info fetched from API
+    //Create div that populates new data with info fetched from API. using innerHTML elements
     const dataDiv = document.createElement('div')
     const incomeP = document.createElement('p')
     const ageP = document.createElement('p')
@@ -64,7 +64,7 @@ function createCard(location, income, age, property){
 
 
 
-// Fetch requests via async await using data USA api
+// Fetch requests using async await for  DATAUSA api
 async function getData(loc, callback){
     const location = loc.stateStr;
     let incomeData, ageData, propertyData;
@@ -83,9 +83,6 @@ async function getData(loc, callback){
 
     } catch(error){
         console.log(error)
-    } finally{
-        callback(loc, incomeData, ageData, propertyData)
-    }
 }
 
 
