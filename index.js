@@ -23,6 +23,8 @@ async function getData(loc, callback){
 
     } catch(error){
         console.log(error)
+} finally{
+    callback(loc, incomeData, ageData, propertyData)
 }
 
 
