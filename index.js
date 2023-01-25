@@ -23,10 +23,9 @@ async function getData(loc, callback){
 
     } catch(error){
         console.log(error)
-} finally{
+    } finally{
     callback(loc, incomeData, ageData, propertyData)
 }
-
 
 
 // Add new city card container to display
@@ -167,3 +166,7 @@ closeButton.addEventListener('click', (e) => console.log(e.target.parentElement.
 document.addEventListener('DOMContentLoaded', beginningCard) /// 
 form.addEventListener('submit', handleSubmit)
 */
+
+/* array iteration
+ startingPoint.forEach(location => startCity(location[0], location[1], location[2])) /// 
+ */
