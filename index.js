@@ -4,6 +4,26 @@ const states = document.getElementById('states')
 const card = document.querySelector('#card')
 
 
+// Fetch requests using async await for  DATAUSA api
+async function getData(loc, callback){
+    const location = loc.stateStr;
+    let incomeData, ageData, propertyData;
+    try {
+        incomeData = await fetch(`https://datausa.io/api/data?measure=Household%20Income%20by%20Race,Household%20Income%20by%20Race%20Moe&Geography=${location}:similar&year=latest`)
+            .then(response => response.json())
+            .then(d => updateIncome(d))
+
+        ageData = await fetch(`https://datausa.io/api/data?measure=Median%20Age&Geography=${location}:parents&year=latest`)
+            .then(response => response.json())
+            .then(d => updateAge(d))
+
+        propertyData = await fetch(`https://datausa.io/api/data?measure=Property%20Value&Geography=${location}:parents&year=latest`)
+            .then(response => response.json())
+            .then(d => updateProperty(d))
+
+    } catch(error){
+        console.log(error)
+}
 
 
 
@@ -60,29 +80,6 @@ function createCard(location, income, age, property){
         ageP.innerHTML = `Median Age: <span class='data'>${age} years</span>`
         
         propertyP.innerHTML = `Median Property Value: <span class='data'>${property}</span>`
-}
-
-
-
-// Fetch requests using async await for  DATAUSA api
-async function getData(loc, callback){
-    const location = loc.stateStr;
-    let incomeData, ageData, propertyData;
-    try {
-        incomeData = await fetch(`https://datausa.io/api/data?measure=Household%20Income%20by%20Race,Household%20Income%20by%20Race%20Moe&Geography=${location}:similar&year=latest`)
-            .then(response => response.json())
-            .then(d => updateIncome(d))
-
-        ageData = await fetch(`https://datausa.io/api/data?measure=Median%20Age&Geography=${location}:parents&year=latest`)
-            .then(response => response.json())
-            .then(d => updateAge(d))
-
-        propertyData = await fetch(`https://datausa.io/api/data?measure=Property%20Value&Geography=${location}:parents&year=latest`)
-            .then(response => response.json())
-            .then(d => updateProperty(d))
-
-    } catch(error){
-        console.log(error)
 }
 
 
@@ -160,3 +157,11 @@ function startCity(city, st, state){
 function beginningCard(){
     startingPoint.forEach(location => startCity(location[0], location[1], location[2]))
 }
+
+}
+
+/* event listeners listed out
+closeButton.addEventListener('click', (e) => console.log(e.target.parentElement.parentElement.remove())) /// 
+document.addEventListener('DOMContentLoaded', beginningCard) /// 
+form.addEventListener('submit', handleSubmit)
+*/
