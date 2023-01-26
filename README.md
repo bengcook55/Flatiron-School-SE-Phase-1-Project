@@ -1,6 +1,6 @@
 # Overview
 
-This single page application was created as part of Flatiron School software engineering phase 1 curriculum. This application is built using HTML, CSS, and JavaScript. It utilizes a fetch api from the U.S Census Bureau (DATAUSA) to analyze and compare different economic and social metrics from  cities all across the United States of America. The specific API used can be found at DATAUSA.io. The link to my website can be found at https://bengcook55.github.io/Flatiron-School-SE-Phase-1-Project/
+This single page application was created as part of Flatiron School software engineering phase 1 curriculum. This application was built using HTML, CSS, and JavaScript. It uses a fetch api to get data from the U.S Census Bureau via DATAUSA to analyze and compare different economic and social metrics from  cities all across the United States of America. The selected statistical data points to compare are median income, median age, and median property value. The specific API used can be found at DATAUSA.io. The link to my website can be found at https://bengcook55.github.io/Flatiron-School-SE-Phase-1-Project/
 
 # Project Key Objectives
 - An HTML/CSS/JS frontend application that accesses data from a public API
