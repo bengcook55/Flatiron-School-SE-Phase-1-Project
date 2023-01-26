@@ -55,7 +55,7 @@ function updateProperty(d){
 }
 
 
-//create card after DOM loads
+//create card div in container after DOM loads
 document.addEventListener('DOMContentLoaded', beginningCard)
 
 form.addEventListener('submit', handleSubmit)
@@ -64,7 +64,6 @@ form.addEventListener('submit', handleSubmit)
 function handleSubmit(e){
     e.preventDefault()
 
-    //create location object (posts to db.json) from search input
     let newLocationObject = {
         city: e.target.city.value,
         st: e.target.states.value,
