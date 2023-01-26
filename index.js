@@ -26,64 +26,7 @@ async function getData(loc, callback){
     } finally{
     callback(loc, incomeData, ageData, propertyData)
 }
-
-
-// Add new city card container to display
-function createCard(location, income, age, property){
-    
-    //Create card that displays on form submission
-    const newCard = document.createElement('div')
-    newCard.id = 'card'
-    container.append(newCard)
-    
-    //Create close button exit sign w/ image
-    const closeButton = document.createElement('div')
-    closeButton.className = 'close-btn'
-    newCard.append(closeButton)
-
-    const closeIcon = document.createElement('img')
-    closeIcon.className = 'icon'
-    closeIcon.src = "https://cdn11.bigcommerce.com/s-69o9yl6pah/images/stencil/1280x1280/products/639/1026/Exit_sign__80869.1588876729.png?c=2"
-    closeButton.append(closeIcon)
-
-    //Delete card when exit image is clicked
-    closeButton.addEventListener('click', (e) => console.log(e.target.parentElement.parentElement.remove()))
-
-    //Render card header with location Info
-    const cardHeader = document.createElement('div')
-    cardHeader.className = 'card-header'
-    
-        const h3 = document.createElement('h3')
-        h3.textContent = location.city
-        h3.className = 'city'
-        cardHeader.append(h3)
-
-        const h4 = document.createElement('h4')
-        h4.textContent = `${location.state}, USA`
-        h4.className = 'state'
-        cardHeader.append(h4)
-
-        newCard.append(cardHeader)
-
-
-    //Create div that populates new data with info fetched from API. using innerHTML elements
-    const dataDiv = document.createElement('div')
-    const incomeP = document.createElement('p')
-    const ageP = document.createElement('p')
-    const propertyP = document.createElement('p')
-
-        dataDiv.append(incomeP, ageP, propertyP)
-        dataDiv.className = 'data-div'
-        newCard.append(dataDiv)
-            
-        incomeP.innerHTML = `Median Income: <span class='data'>${income}</span>`
-
-        ageP.innerHTML = `Median Age: <span class='data'>${age} years</span>`
-        
-        propertyP.innerHTML = `Median Property Value: <span class='data'>${property}</span>`
 }
-
-
 
 //data from fetch and how they are to update with specified function
 function updateIncome(d){
@@ -159,7 +102,62 @@ function beginningCard(){
     startingPoint.forEach(location => startCity(location[0], location[1], location[2]))
 }
 
+
+// Add new city card container to display
+function createCard(location, income, age, property){
+    
+    //Create card that displays on form submission
+    const newCard = document.createElement('div')
+    newCard.id = 'card'
+    container.append(newCard)
+    
+    //Create close button exit sign w/ image
+    const closeButton = document.createElement('div')
+    closeButton.className = 'close-btn'
+    newCard.append(closeButton)
+
+    const closeIcon = document.createElement('img')
+    closeIcon.className = 'icon'
+    closeIcon.src = "https://cdn11.bigcommerce.com/s-69o9yl6pah/images/stencil/1280x1280/products/639/1026/Exit_sign__80869.1588876729.png?c=2"
+    closeButton.append(closeIcon)
+
+    //Delete card when exit image is clicked
+    closeButton.addEventListener('click', (e) => console.log(e.target.parentElement.parentElement.remove()))
+
+    //Render card header with location Info
+    const cardHeader = document.createElement('div')
+    cardHeader.className = 'card-header'
+    
+        const h3 = document.createElement('h3')
+        h3.textContent = location.city
+        h3.className = 'city'
+        cardHeader.append(h3)
+
+        const h4 = document.createElement('h4')
+        h4.textContent = `${location.state}, USA`
+        h4.className = 'state'
+        cardHeader.append(h4)
+
+        newCard.append(cardHeader)
+
+
+    //Create div that populates new data with info fetched from API. using innerHTML elements
+    const dataDiv = document.createElement('div')
+    const incomeP = document.createElement('p')
+    const ageP = document.createElement('p')
+    const propertyP = document.createElement('p')
+
+        dataDiv.append(incomeP, ageP, propertyP)
+        dataDiv.className = 'data-div'
+        newCard.append(dataDiv)
+            
+        incomeP.innerHTML = `Median Income: <span class='data'>${income}</span>`
+
+        ageP.innerHTML = `Median Age: <span class='data'>${age} years</span>`
+        
+        propertyP.innerHTML = `Median Property Value: <span class='data'>${property}</span>`
 }
+
 
 /* event listeners listed out
 closeButton.addEventListener('click', (e) => console.log(e.target.parentElement.parentElement.remove())) /// 
