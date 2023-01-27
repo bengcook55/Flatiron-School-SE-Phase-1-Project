@@ -55,12 +55,6 @@ function updateProperty(d){
 }
 
 
-//create card div in container after DOM loads
-document.addEventListener('DOMContentLoaded', beginningCard)
-
-form.addEventListener('submit', handleSubmit)
-
-
 function handleSubmit(e){
     e.preventDefault()
 
@@ -76,7 +70,6 @@ function handleSubmit(e){
 
     form.reset()
 }
-
 
 // Show beginning cards which contain a city and iterate over each in an array using map/filter/forEach etc.
 const startingPoint = [
@@ -101,6 +94,10 @@ function beginningCard(){
     startingPoint.forEach(location => startCity(location[0], location[1], location[2]))
 }
 
+//create card div in container after DOM loads
+document.addEventListener('DOMContentLoaded', beginningCard)
+
+form.addEventListener('submit', handleSubmit)
 
 // Add new city card container to display
 function createCard(location, income, age, property){
